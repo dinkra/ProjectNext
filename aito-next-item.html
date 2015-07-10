@@ -1,0 +1,131 @@
+<link rel="import"
+      href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="bower_components/paper-item/paper-icon-item.html">
+<link rel="import" href="bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="bower_components/paper-item/paper-item.html">
+<link rel="import" href="bower_components/paper-styles/paper-styles.html">
+<link rel="import" href="bower_components/paper-styles/demo-pages.html">
+<link rel="import" href="bower_components/iron-form/iron-form.html">
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="bower_components/iron-icons/av-icons.html">
+
+<dom-module id="aito-next-item">
+	<style is="custom-style">
+		:host {
+			box-sizing: border-box;
+		}
+
+		/* :host {
+		display: block;
+		position: relative;
+		background-color: white;
+		padding: 20px;
+		width: 100%;
+		font-size: 1.2rem;
+		font-weight: 300;
+		}*/
+		.card-header {
+			margin: 0 70px 6px 70px;
+			width: 320px;
+			height: 150px;
+			background-color: white;
+			@apply(--shadow-elevation-2dp);
+
+			line-height: 100px;
+  			text-align: center;
+		}/*
+		.card-header ::content h2 {
+			margin: 0;
+			font-size: 1.8rem;
+			font-weight: 300;
+		}
+		.card-header ::content img {
+			width: 70px;
+			border-radius: 50%;
+			margin: 10px;
+		}
+			:host([favorite]) core-icon-button {
+			color: #da4336;
+		}*/
+
+		.time, .score {
+			line-height: 0;
+  			text-align: none;
+  			font-weight: bold;
+		}
+
+		.time {
+			float: left;
+			margin: 25px 0 0 10px;
+			padding: 10px;
+		}
+
+		.score {
+			float: right;
+			margin: 25px 10px 0 0;
+			padding: 10px;
+			xbackground-color: yellow;
+		}
+
+		.news_title {
+			display: inline-block;
+  			vertical-align: middle;
+  			line-height: normal; 
+  			margin: 0 10px;
+  			font-size: 18px;
+  			font-weight: 200;
+		}
+
+		.blue .score {
+			background-color: var(--paper-light-blue-500);
+		}
+		.red .score {
+			background-color: var(--paper-red-500);
+		}
+		.orange .score {
+			background-color: var(--paper-orange-500);
+		}
+		.green .score {
+			background-color: var(--paper-green-500);
+		}
+		.cyan .score {
+			background-color: var(--paper-cyan-500);
+		}
+		.lime .score {
+			background-color: var(--paper-lime-500);
+		}
+		.pink .score {
+			background-color: var(--paper-pink-200);
+		}
+		.yellow	.score {
+			background-color: var(--paper-yellow-500);
+		}
+		.purple	.score {
+			background-color: var(--paper-purple-300);
+		}
+
+	</style>
+	<template>
+		<div class="card-header">
+			<div class="time">{{item.time}}</div>
+			<div class$="{{item.color}}"><span class="score">{{item.score}}</span></div>
+			<span class="news_title">{{item.title}}</span>
+            <!-- <content select="img"></content>
+            <content select="h2"></content> -->
+        </div>
+	</template>
+</dom-module>
+
+<script>
+  Polymer({
+
+    is: 'aito-next-item',
+
+    properties: {
+		item: Object,
+		color: String
+    },
+
+  });
+</script>
